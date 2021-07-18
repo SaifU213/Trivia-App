@@ -1,24 +1,48 @@
 * {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .app {
-  background-color: aqua;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #fff;
 }
 
 .app__body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 80rem;
+  flex-direction: column;
+  height: 90vh;
+  width: 90vw;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .app__body > * {
   width: 1;
+}
+
+/* Question */
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #000;
+}
+
+/* NEXT Button */
+h2 {
+  color: #7412d7;
+}
+
+/* Multiple Choice */
+h3 {
+  color: #7412d7;
+}
+
+/* Question Number */
+h4 {
+  color: #7412d7;
 }
