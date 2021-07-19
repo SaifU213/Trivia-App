@@ -1,24 +1,23 @@
 import "./App.css";
 //import React, { useState } from "react";
-import React from "react";
-//import Menu from "./Components/Menu";
-import Question from "./Components/Question";
-import QuestionNumber from "./Components/QuestionNumber";
-import NextButton from "./Components/NextButton";
-import MultipleChoice from "./Components/MultipleChoice";
+import React, { useState } from "react";
+import Menu from "./Components/Menu";
+import Quiz from "./Components/Quiz";
+// import Question from "./Components/Question";
+// import QuestionNumber from "./Components/QuestionNumber";
+// import NextButton from "./Components/NextButton";
+// import MultipleChoice from "./Components/MultipleChoice";
 
 function App() {
-  //const [gameState, setGameState] = useState("menu");
+  const [gameState, setGameState] = useState("quiz");
   //const [questionNum, setQuestionNum] = useState(0);
   //const [score, set] = useState(0);
 
   return (
     <div className="app">
       <div className="app__body">
-        <QuestionNumber />
-        <Question />
-        <MultipleChoice />
-        <NextButton />
+        {/* {gameState === "menu" && <Menu />} */}
+        {gameState === "quiz" && <Quiz />}
       </div>
     </div>
   );
