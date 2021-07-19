@@ -1,0 +1,4 @@
+.questionNumber {
+  display: flex;
+  min-height: 3.75vh;
+}

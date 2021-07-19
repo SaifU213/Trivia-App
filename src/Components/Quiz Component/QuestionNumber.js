@@ -1,4 +1,5 @@
 import React from "react";
+import "./QuestionNumber.css";
 
 function QuestionNumber() {
   return (

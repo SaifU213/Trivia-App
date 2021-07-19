@@ -1,0 +1,5 @@
+.nextButton {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 7.5vh;
+}
