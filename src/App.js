@@ -8,6 +8,9 @@ import Quiz from "./Components/Quiz";
 // import NextButton from "./Components/NextButton";
 // import MultipleChoice from "./Components/MultipleChoice";
 
+const API_URL =
+  "https://opentdb.com/api.php?amount=20&category=9&difficulty=easy&type=multiple";
+
 function App() {
   const [gameState, setGameState] = useState("quiz");
   //const [questionNum, setQuestionNum] = useState(0);
