@@ -1,6 +1,7 @@
 import { Button, makeStyles } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import "./NextButton.css";
+import { QuizContext } from "../Helpers/Contexts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,11 +13,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function NextButton() {
+  const { currentQuestion, setCurrentQuestion } = useContext(QuizContext);
   const classes = useStyles();
+
+  function clickMe() {
+    if (currentQuestion < 9) {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  }
 
   return (
     <div className="nextButton">
-      <Button classes={{ root: classes.root }} size="large" color="primary">
+      <Button
+        classes={{ root: classes.root }}
+        size="large"
+        color="primary"
+        onClick={clickMe}
+      >
         NEXT
       </Button>
     </div>

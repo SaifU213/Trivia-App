@@ -1,7 +1,5 @@
 import "./App.css";
-//import React, { useState } from "react";
-import React, { useState, useEffect, useContext } from "react";
-//import Menu from "./Components/Menu";
+import React, { useState, useEffect } from "react";
 import Quiz from "./Components/Quiz";
 import { QuizContext } from "./Components/Helpers/Contexts";
 
@@ -14,6 +12,8 @@ const API_URL =
 function App() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [disableButton, setDisableButton] = useState("false");
 
   useEffect(() => {
     fetch(API_URL)
@@ -32,6 +32,10 @@ function App() {
             setQuestions,
             currentQuestion,
             setCurrentQuestion,
+            score,
+            setScore,
+            disableButton,
+            setDisableButton,
           }}
         >
           <Quiz />
