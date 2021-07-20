@@ -1,3 +1,5 @@
+# There is no idicator if you've got the answers correct until the end of the quiz. Click next after clicking one of the four multiple choices of each question until you reach the end.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
