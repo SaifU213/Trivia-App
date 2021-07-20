@@ -1,5 +1,6 @@
 .question {
   display: flex;
+  align-items: center;
   color: #7412d7;
   min-height: 22.5vh;
 }

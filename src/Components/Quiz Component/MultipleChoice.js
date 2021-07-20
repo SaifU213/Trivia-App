@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./MultipleChoice.css";
 import { Button, makeStyles } from "@material-ui/core";
+import { QuizContext } from "../Helpers/Contexts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function MultipleChoice() {
+  const { questions, currentQuestion } = useContext(QuizContext);
+
   const [state, setstate] = useState("A. Answer 1");
 
   const classes = useStyles();
@@ -28,9 +31,13 @@ function MultipleChoice() {
         variant="outlined"
         color="primary"
         size="large"
-        onClick={clickMe}
+        // onClick={clickMe}
       >
-        {state}
+        <span
+          dangerouslySetInnerHTML={{
+            __html: questions[currentQuestion].correct_answer,
+          }}
+        />
       </Button>
       <Button
         classes={{ root: classes.root }}
@@ -39,7 +46,7 @@ function MultipleChoice() {
         size="large"
         onClick={clickMe}
       >
-        {state}
+        {questions[currentQuestion].correct_answer}
       </Button>
       <Button
         classes={{ root: classes.root }}
@@ -48,7 +55,7 @@ function MultipleChoice() {
         size="large"
         onClick={clickMe}
       >
-        {state}
+        {questions[currentQuestion].correct_answer}
       </Button>
       <Button
         classes={{ root: classes.root }}
@@ -57,7 +64,7 @@ function MultipleChoice() {
         size="large"
         onClick={clickMe}
       >
-        {state}
+        {questions[currentQuestion].correct_answer}
       </Button>
     </div>
   );
