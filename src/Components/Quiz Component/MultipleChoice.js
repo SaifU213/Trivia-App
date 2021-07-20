@@ -3,26 +3,41 @@ import "./MultipleChoice.css";
 import { Button, makeStyles } from "@material-ui/core";
 import { QuizContext } from "../Helpers/Contexts";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    color: "#7412d7",
-    outlinedPrimart: "#7412d7",
-    size: "large",
-    fullWidth: "true",
-  },
-}));
-
 function MultipleChoice() {
-  const { questions, currentQuestion } = useContext(QuizContext);
+  const {
+    questions,
+    currentQuestion,
+    score,
+    setScore,
+    disableButton,
+    setDisableButton,
+  } = useContext(QuizContext);
 
-  const [state, setstate] = useState("A. Answer 1");
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      color: "#7412d7",
+      outlinedPrimart: "#7412d7",
+      size: "large",
+      fullWidth: "true",
+      disabled: { disableButton },
+    },
+  }));
 
   const classes = useStyles();
 
-  function clickMe() {
-    setstate("B. Answer 2");
-    //alert("You clicked me!");
-  }
+  const handleAnswer = (answer) => {
+    if (answer === questions[currentQuestion].correct_answer) {
+      setScore(score + 1);
+    }
+    if (currentQuestion == 9) {
+      alert("You've score " + score + " out of 10!");
+    }
+  };
+
+  const shuffledAnswer = [
+    questions[currentQuestion].correct_answer,
+    ...questions[currentQuestion].incorrect_answers,
+  ].sort(() => Math.random() - 0.5);
 
   return (
     <div className="multipleChoice">
@@ -31,40 +46,36 @@ function MultipleChoice() {
         variant="outlined"
         color="primary"
         size="large"
-        // onClick={clickMe}
+        onClick={() => handleAnswer(shuffledAnswer[0])}
       >
-        <span
-          dangerouslySetInnerHTML={{
-            __html: questions[currentQuestion].correct_answer,
-          }}
-        />
+        {shuffledAnswer[0]}
       </Button>
       <Button
         classes={{ root: classes.root }}
         variant="outlined"
         color="primary"
         size="large"
-        onClick={clickMe}
+        onClick={() => handleAnswer(shuffledAnswer[1])}
       >
-        {questions[currentQuestion].correct_answer}
+        {shuffledAnswer[1]}
       </Button>
       <Button
         classes={{ root: classes.root }}
         variant="outlined"
         color="primary"
         size="large"
-        onClick={clickMe}
+        onClick={() => handleAnswer(shuffledAnswer[2])}
       >
-        {questions[currentQuestion].correct_answer}
+        {shuffledAnswer[2]}
       </Button>
       <Button
         classes={{ root: classes.root }}
         variant="outlined"
         color="primary"
         size="large"
-        onClick={clickMe}
+        onClick={() => handleAnswer(shuffledAnswer[3])}
       >
-        {questions[currentQuestion].correct_answer}
+        {shuffledAnswer[3]}
       </Button>
     </div>
   );
