@@ -1,4 +1,5 @@
 .questionNumber {
   display: flex;
+  align-items: flex-end;
   min-height: 3.75vh;
 }

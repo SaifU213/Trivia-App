@@ -24,6 +24,7 @@
 
 /* Question */
 h1 {
+  align-items: center;
   font-weight: 900;
   color: #000;
 }
