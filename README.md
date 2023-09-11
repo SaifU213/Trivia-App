@@ -1,5 +1,3 @@
-# Trivia App
-
 # What does it do?
 Uses the Open Trivia API to generate questions in order to design a game based on Trivia. 
 
