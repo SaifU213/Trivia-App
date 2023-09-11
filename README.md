@@ -1,3 +1,11 @@
+# Trivia App
+
+# What does it do?
+Uses the Open Trivia API to generate questions in order to design a game based on Trivia. 
+
+# What technologies does it use?
+React.js, Express.js, Node.js and a RESTful API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
